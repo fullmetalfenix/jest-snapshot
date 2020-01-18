@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Items from './Components/Items';
-
+import Header from './Components/Header'
 class App extends Component {
   render() {
     const items = [
@@ -9,9 +9,12 @@ class App extends Component {
       'Hulk'
     ];
     return (
-      <Items items={items} />
+      <div>
+        <Header />
+        <Items items={items} />
+      </div>
     );
   }
 }
 
-export default App;
+export default App; 

@@ -1,19 +1,21 @@
 import React from 'react';
 
+const navStyles = {
+  background: 'red',
+  padding: '20px',
+  display: 'flex',
+  justifyContent: 'space-evenly',
+  alignContent: 'space-around',
+      }    
+  const linkStyles = {
+      color: 'black',
+      textDecoration: "none",
+  }
+
 class Header extends React.Component {
 
     render() {
-      const navStyles = {
-        background: 'red',
-        padding: '20px',
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        alignContent: 'space-around',
-            }    
-        const linkStyles = {
-            color: 'white',
-            textDecoration: "none",
-        }
+      
       return (
         <nav style={navStyles}>
           <a style={linkStyles} href="/">Home</a> |

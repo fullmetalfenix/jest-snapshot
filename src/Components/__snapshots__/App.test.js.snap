@@ -1,5 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Rendering the header 1`] = `
+<nav
+  style={
+    Object {
+      "alignContent": "space-around",
+      "background": "red",
+      "display": "flex",
+      "justifyContent": "space-evenly",
+      "padding": "20px",
+    }
+  }
+>
+  <a
+    href="/"
+    style={
+      Object {
+        "color": "black",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Home
+  </a>
+   |
+  <a
+    href="/about"
+    style={
+      Object {
+        "color": "black",
+        "textDecoration": "none",
+      }
+    }
+  >
+    About
+  </a>
+   |
+  <a
+    href="/other-projects"
+    style={
+      Object {
+        "color": "black",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Other Projects
+  </a>
+   |
+  <a
+    href="/contact"
+    style={
+      Object {
+        "color": "black",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Contact
+  </a>
+</nav>
+`;
+
 exports[`renders correctly when there are multiple items 1`] = `
 <ul>
   <li

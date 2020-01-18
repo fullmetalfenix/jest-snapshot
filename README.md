@@ -1,68 +1,22 @@
+
+# Jest Snapshot testing in React
+
+This project was designed to further my understanding of the JEST testing suite, in peticular the snapshot testing functionality. First up: from a tutorial located [here](https://scotch.io/tutorials/writing-snapshot-tests-for-react-components-with-jest)
+
+## Tutorial Time
+ First I followed the tutorial from the location above, created a component that dynamically creates a list from a local prop and displays it on screen. Following the tutorial further I added tests for the blank/empty component, with one prop and with a few - creating screenshots for each. Looks good so far! Purposly failed a test by updating the compnent to add a class (className I guess) then regenerated the snapshots - Cool! Time to venture out on my own.
+ 
+## Creating my own component to test
+ Next up I created a Header component with a nav in it to try writing my own test - works pretty much the same for now. Great!
+ 
+## Stylin' it
+ Now I'm finally outside the bounds of the tutorial - im adding styling objects for the nav and the nav items. I wasn't sure how this would work out but happily it worked better than I thought it would. Fist I created 2 style objects, 'navStyles' and 'linkStyles' including them in the render of the component, updated the snapshots and Its working fine - take a quick look at the snapshots and I can see the styles are included - neat! Now I move the style object variables completely out of the class, and it still passes all the tests, huh?! Shouldn't editing the class break it? Changing the value of one of the props does so I take a closer look at the snapshots - OH! Of course! Its saving an isntance of the value of the style objects into the inline "style=" property's themselves in the snapshot - right, the snapshot test is only concerned with whats being rendered not the component itself. Everythings working so far!
+ 
+ ## Inline Snapshots
+ 
+ Next up, inline snapshots. I can see in the Jest documentation that you need to install "prettier" for inline snapshots to work but as this whole project is to experement with Jest snapshoting I try it without doing so. True to the documentations word - error, needs the "prettier" modual. Installed. Test suite run again aaaannnnddd ... Awesome, it added the snapshot right in the test file, just as advertised. Changed Header to make the test fail and both fail just about the same way (small difference where it outputs the defined test but the test are different so good). Now I update the screenshots and both update in the same way. OK, were done here!
+
+
+P.S.:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
